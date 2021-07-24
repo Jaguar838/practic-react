@@ -1,10 +1,11 @@
 import hero from "../../images/hero.jpg";
 
+import styles from "./Hero.module.css"
 const Hero = () => {
   return (
-    <section>
-      <img src={hero} alt="hero" />
-      <div>
+    <section className={styles.container}>
+      <img src={hero} alt="room" />
+      <div className={styles["text-area"]}>
         <h1>Design that inspires a better way to work.</h1>
         <p>
           We've developed a series of purpose-built rooms that offer companies
@@ -15,5 +16,4 @@ const Hero = () => {
     </section>
   );
 };
-
 export default Hero;

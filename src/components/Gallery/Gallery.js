@@ -1,21 +1,27 @@
 import PropTypes from "prop-types";
-import galleryImg from "./GalleryImg";
 
-export function Gallery() {
+import styles from "./Gallery.module.css"
+
+function Gallery({ galleryImg }) {
   return (
-    <section>
-      <ul>
-        {galleryImg.map((image) => (
-          <li key={image.id}>
-            <img src={image.img} alt={image.label} />
-            <p>{image.label}</p>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <ul className={styles.cardSet}>
+      {galleryImg.map((image) => (
+        <li key={image.id} className={styles.item}>
+          <img src={image.img} alt={image.label} />
+          <p>{image.label}</p>
+        </li>
+      ))}
+    </ul>
   );
 }
+export default Gallery;
 
 Gallery.propTypes = {
-  id: PropTypes,
+  galleryImg: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      img: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    })
+  ),
 };
