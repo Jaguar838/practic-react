@@ -9,13 +9,13 @@ const Header = () => {
       <div className={styles.container}>
         <div className={styles.top}>
           <ul className={styles.contacts}>
-            <li className={styles['contacts-item']}>
+            <li className={styles["contacts-item"]}>
               <a href="/contact">Contact Sales</a>
             </li>
-            <li className={styles['contacts-item']}>
+            <li className={styles["contacts-item"]}>
               <a href="tel:6467913726">646-791-3726</a>
             </li>
-            <li className={styles['contacts-item']}>
+            <li className={styles["contacts-item"]}>
               <select>
                 <option>US</option>
                 <option>UK</option>
@@ -25,28 +25,29 @@ const Header = () => {
         </div>
         <div className={styles.bottom}>
           <a href="/header">
-            <img src={logo} alt="logo" className={styles['logo-header']}/>
+            <img src={logo} alt="logo" className={styles["logo-header"]} />
           </a>
           <nav className={styles.nav}>
-            <ul className={styles['nav-menubar']}>
-              <li className={styles['nav-item']}>
+            <ul className={styles["nav-menubar"]}>
+              <li className={styles["nav-item"]}>
                 <a href="/products">Products</a>
               </li>
-              <li className={styles['nav-item']}>
+              <li className={styles["nav-item"]}>
                 <a href="explore">Explore</a>
               </li>
-              <li className={styles['nav-item']}>
+              <li className={styles["nav-item"]}>
                 <a href="/Shop">Shop</a>
               </li>
             </ul>
           </nav>
           <div className={styles.showrooms}>
-          <a href="/Showrooms">
-            <img src={map} className={styles.map}/>
-            <span class={styles["showrooms-text"]}>Showrooms</span>
-          </a></div>
+            <a href="/Showrooms">
+              <img src={map} className={styles.map} alt="img1" />
+              <span className={styles["showrooms-text"]}>Showrooms</span>
+            </a>
+          </div>
           <button type="Button" className={styles.cart}>
-            <img src={cart} />
+            <img src={cart} alt="img2" />
           </button>
         </div>
       </div>
