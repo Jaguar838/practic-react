@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from "react";
+import axios from "axios";
 import logo from "../../images/logo_footer.svg";
 import styles from "./Footer.module.css";
 
@@ -14,9 +14,10 @@ class Footer extends Component {
   };
 
   componentDidMount() {
-    const baseUrl = "http://localhost:3004/footer";
+    axios.defaults.baseUrl = "http://localhost:3004/footer";
     console.dir(axios.default.baseUrl);
-    axios.get()
+    axios
+      .get()
       .then((response) => {
         return response.data;
       })
@@ -28,7 +29,7 @@ class Footer extends Component {
 
   componentDidUpdate() {}
   render() {
-    const { about, showrooms, suport, office} = this.state.data;
+    const { about, showrooms, support, office } = this.state.data;
     return (
       <footer>
         <div className={styles.logo}>
@@ -51,73 +52,34 @@ class Footer extends Component {
           <div className={styles.menu_items}>
             <h3>Showrooms</h3>
             <ul>
-              {showrooms &&}
-              <li>
-                <a href="#"> New York</a>
-              </li>
-              <li>
-                <a href="#"> London</a>
-              </li>
-              <li>
-                <a href="#"> San Francisco</a>
-              </li>
-              <li>
-                <a href="#"> Paris</a>
-              </li>
-              <li>
-                <a href="#"> Copenhagen</a>
-              </li>
-              <li>
-                <a href="#"> Zürich</a>
-              </li>
-              <li>
-                <a href="#"> Los Angeles</a>
-              </li>
-              <li>
-                <a href="#"> Berlin</a>
-              </li>
-              <li>
-                <a href="#"> Belgium</a>
-              </li>
-              <li>
-                <a href="#"> Virtual Demo</a>
-              </li>
+              {showrooms &&
+                showrooms.map((el) => {
+                  return (
+                    <li key={el.id}>
+                      <a href="/">{el.link}</a>
+                    </li>
+                  );
+                })}
             </ul>
           </div>
           <div className={styles.menu_items}>
             <h3>Support</h3>
             <ul>
-              <li>
-                <a href="#"> FAQ</a>
-              </li>
-              <li>
-                <a href="#"> Booth Assembly</a>
-              </li>
-              <li>
-                <a href="#"> Delivery</a>
-              </li>
-              <li>
-                <a href="#"> Room Service</a>
-              </li>
-              <li>
-                <a href="#"> Warranty</a>
-              </li>
-              <li>
-                <a href="#"> Terms of Use</a>
-              </li>
-              <li>
-                <a href="#"> Privacy Policy</a>
-              </li>
-              <li>
-                <a href="#"> Copyright</a>
-              </li>
+              {support &&
+                support.map((el) => {
+                  return (
+                    <li key={el.id}>
+                      <a href="/">{el.link}</a>
+                    </li>
+                  );
+                })}
             </ul>
           </div>
           <div className={styles.menu_items}>
             <h3>Office</h3>
             <ul>
               <li>
-                <a href="#"> 599 Broadway, FL 9 New York, NY 10012</a>
+                <a href="/"> 599 Broadway, FL 9 New York, NY 10012</a>
               </li>
             </ul>
           </div>
@@ -126,22 +88,22 @@ class Footer extends Component {
           <h3>Follow us</h3>
           <ul className={styles.icons}>
             <li className={styles.icons_item}>
-              <a href="#">
+              <a href="/">
                 <img src={img1} alt="facebook" />
               </a>
             </li>
             <li className={styles.icons_item}>
-              <a href="#">
+              <a href="/">
                 <img src={img2} alt="instagram" />
               </a>
             </li>
             <li className={styles.icons_item}>
-              <a href="#">
+              <a href="/">
                 <img src={img3} alt="linkedin" />
               </a>
             </li>
             <li className={styles.icons_item}>
-              <a href="#">
+              <a href="/">
                 <img src={img4} alt="pinterest" />
               </a>
             </li>
